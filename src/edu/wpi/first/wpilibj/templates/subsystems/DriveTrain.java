@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import Team102Lib.MessageLogger;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -12,7 +13,8 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.DriveWithJoysticks;
-
+import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.templates.commands.DriveWithXBox;
 /**
  *
  * @author Administrator
@@ -31,6 +33,8 @@ public class DriveTrain extends PIDSubsystem {
 
     double leftJoyY = 0.0;
     double rightJoyY = 0.0;
+    double xboxLeft = 0.0;
+    double xboxRight = 0.0;
 
     // Initialize your subsystem here
     public DriveTrain() {
@@ -49,7 +53,7 @@ public class DriveTrain extends PIDSubsystem {
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new DriveWithJoysticks());
+        setDefaultCommand(new DriveWithXBox());
     }
 
     public void updateStatus() {
@@ -89,4 +93,14 @@ public class DriveTrain extends PIDSubsystem {
 
         drive.tankDrive(-leftJoyY, rightJoyY);
     }
+    
+    public void driveWithXBox(Joystick xBox) {
+    
+     xboxLeft = xBox.getRawAxis(2);
+     xboxRight = xBox.getRawAxis(5);
+     
+
+     drive.tankDrive(-xboxLeft, xboxRight);
+    }
+    
 }

@@ -30,7 +30,7 @@ public class RobotMap {
     // Joysticks
     public static final int leftStickPort = 1;
     public static final int rightStickPort = 2;
-    public static final int xBoxPort = 3;
+    public static final int xBoxPort = 4;
 
     // Relay Ports
     public static final int lightSwitchChannel = 3;
