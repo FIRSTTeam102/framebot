@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.templates.subsystems.Light;
 import edu.wpi.first.wpilibj.templates.subsystems.Vision;
 import edu.wpi.first.wpilibj.templates.subsystems.Winch;
+import edu.wpi.first.wpilibj.templates.subsystems.RangeSensor;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -21,6 +22,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain driveTrain = new DriveTrain();
     public static Winch winch = new Winch();
     public static Light light = new Light();
+    public static RangeSensor rangeSensor = new RangeSensor();
 //    public static Vision vision = new Vision();
 
     public static void init() {

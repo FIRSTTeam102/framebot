@@ -3,6 +3,7 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.GetRange;
 import edu.wpi.first.wpilibj.templates.commands.SwitchLight;
 import edu.wpi.first.wpilibj.templates.commands.WinchAtConstantSpeed;
 
@@ -75,6 +76,7 @@ public class OI {
         xBoxA.whileHeld(new WinchAtConstantSpeed(0.2));
         xBoxRightBumper.whenPressed(new SwitchLight(true));
         xBoxRightBumper.whenReleased(new SwitchLight(false));
+        xBoxB.whenReleased(new GetRange());
     }
 
     public Joystick getLeftJoystick() {
