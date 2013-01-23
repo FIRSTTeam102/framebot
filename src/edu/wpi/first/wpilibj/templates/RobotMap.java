@@ -28,9 +28,9 @@ public class RobotMap {
     public static Deadband stickDeadBand = null;    // Used to create a smooth deadband for the stick.
 
     // Joysticks
-    public static final int leftStickPort = 1;
-    public static final int rightStickPort = 2;
-    public static final int xBoxPort = 4;
+    public static final int leftStickPort = 2;
+    public static final int rightStickPort = 3;
+    public static final int xBoxPort = 1;
 
     // Relay Ports
     public static final int lightSwitchChannel = 3;
