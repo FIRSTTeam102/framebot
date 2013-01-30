@@ -31,11 +31,15 @@ public class Deadband {
     public Deadband(double rr, double dr, double ef, double rp) {
         this.rangeRadius = rr;
         this.deadRadius = dr;
+        if(ef > 5.0)
+            ef = 5.0;
         this.expFactor = ef;
         this.rescalePercent = rp;
     }
 
     public void SetExpFactor(double ef) {
+        if(ef > 5.0)
+            ef = 5.0;
         this.expFactor = ef;
     }
 
